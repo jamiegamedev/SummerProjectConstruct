@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>PlayerControlEventSheet</name>
+    <events>
+        <event-block sid="162">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="163" type="PlayerControl">
+                    <param id="0" name="Instance variable">climbing</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="5" name="Set gravity" sid="164" type="PlayerControl">
+                    <param id="0" name="Gravity">1500</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="165">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="166" type="PlayerControl">
+                            <param id="0" name="Object">ladder</param>
+                        </condition>
+                        <condition id="2" name="Key is down" sid="167" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="168" type="PlayerControl">
+                            <param id="0" name="Instance variable">climbing</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="169">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="170" type="PlayerControl">
+                    <param id="0" name="Instance variable">climbing</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="171" type="PlayerControl">
+                    <param id="0" name="Vector Y">0</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="172" type="PlayerControl">
+                    <param id="0" name="Gravity">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="173">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="174" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="175" type="PlayerControl">
+                            <param id="0" name="Vector Y">150</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="176">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="177" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="178" type="PlayerControl">
+                            <param id="0" name="Vector Y">-150</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="179">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="180" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="181" type="PlayerControl">
+                            <param id="0" name="Vector Y">-500</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="182" type="PlayerControl">
+                            <param id="0" name="Instance variable">climbing</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="183">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="184" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="185" type="Player">
+                            <param id="0" name="Animation">&quot;climb&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="186">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="187" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="188" type="Player">
+                            <param id="0" name="Animation">&quot;climb&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="189">
+            <conditions>
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="190" type="PlayerControl">
+                    <param id="0" name="Object">ladder</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="191" type="PlayerControl">
+                    <param id="0" name="Instance variable">climbing</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="192">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="193" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="194" type="Player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="195">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="196" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="197" type="Player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Star Count</comment>
+        <event-block sid="198">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="199" type="Player">
+                    <param id="0" name="Object">Star</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="200" type="Star" />
+                <action id="-11" name="Subtract from" sid="201" type="System">
+                    <param id="0" name="Variable">Stars</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Pin Player Art to The Controller. This makes the collider a box rather than pixel perfect</comment>
+        <event-block sid="202">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="203" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="204" type="Player">
+                    <param id="0" name="Pin to">PlayerControl</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Player Animation</comment>
+        <event-block sid="205">
+            <conditions>
+                <condition behavior="Platform" id="0" name="Is moving" sid="206" type="PlayerControl" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="207" type="Player">
+                    <param id="0" name="Animation">&quot;running&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="208">
+            <conditions>
+                <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="209" type="PlayerControl" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="210" type="Player">
+                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="211">
+            <conditions>
+                <condition behavior="Platform" id="3" name="Is jumping" sid="212" type="PlayerControl" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="213" type="Player">
+                    <param id="0" name="Animation">&quot;jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Mirror Player</comment>
+        <event-block sid="214">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="215" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="216" type="Player">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="217">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="218" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="219" type="Player">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

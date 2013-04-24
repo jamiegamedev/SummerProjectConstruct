@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>World1EventSheet</name>
+    <events>
+        <variable constant="0" name="Stars" sid="108" static="0" type="number">3</variable>
+        <include>PlayerControlEventSheet</include>
+        <comment>ON START OF LAYOUT</comment>
+        <event-block sid="109">
+            <conditions>
+                <condition disabled="1" id="-2" name="On start of layout" sid="110" type="System" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Play" sid="111" type="Audio">
+                    <param id="0" name="Audio file">Rob_Risley_Shroom_Raider</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="112">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="113" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="114" type="FireBall">
+                    <param id="0" name="Animation">&quot;default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="115">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="116" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Pin" id="0" name="Pin to object" sid="117" type="FireBall">
+                    <param id="0" name="Pin to">RotatingStick</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="118">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="119" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="120" type="Enemy">
+                    <param id="0" name="Animation">&quot;walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>PLAYER ACTIONS IN LEVEL</comment>
+        <event-block sid="121">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="122" type="PlayerControl">
+                    <param id="0" name="Object">Spikes</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="123" type="Player">
+                    <param id="0" name="Object">BloodSplatter</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="124" type="Player" />
+                <action id="-9" name="Destroy" sid="125" type="PlayerControl" />
+                <action id="-16" name="Wait" sid="126" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="127" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="128">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="129" type="PlayerControl">
+                    <param id="0" name="Object">FireBall</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="130" type="Player">
+                    <param id="0" name="Object">BloodSplatter</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="131" type="Player" />
+                <action id="-9" name="Destroy" sid="132" type="PlayerControl" />
+                <action id="-16" name="Wait" sid="133" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="134" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="135">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="136" type="PlayerControl">
+                    <param id="0" name="Object">Enemy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="137" type="Player">
+                    <param id="0" name="Object">BloodSplatter</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="138" type="Player" />
+                <action id="-16" name="Wait" sid="139" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="140" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="141">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="142" type="Player">
+                    <param id="0" name="Object">Trophy</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="143" type="Trophy">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="144" type="Player" />
+                <action id="-9" name="Destroy" sid="145" type="PlayerControl" />
+                <action id="0" name="Spawn another object" sid="146" type="Trophy">
+                    <param id="0" name="Object">WinAnimation</param>
+                    <param id="1" name="Layer">2</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="147" type="WinAnimation">
+                    <param id="0" name="Object">Particles</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>ENEMY ACTIONS IN LEVEL</comment>
+        <event-block sid="148">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="149" type="Enemy">
+                    <param id="0" name="Object">EnemyTrigger2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="150" type="Enemy">
+                    <param id="0" name="Angle">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="151">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="152" type="Enemy">
+                    <param id="0" name="Object">EnemyTriger1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-8" name="Set angle" sid="153" type="Enemy">
+                    <param id="0" name="Angle">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="154">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="155" type="System">
+                    <param id="0" name="Interval (seconds)">random(3,6)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="156" type="Enemy">
+                    <param id="0" name="Animation">&quot;blink&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="157" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="4" name="Set animation" sid="158" type="Enemy">
+                    <param id="0" name="Animation">&quot;walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="240">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="241" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>
